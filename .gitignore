@@ -30,3 +30,5 @@
 *.exe
 *.out
 *.app
+/TextEncrypterWindows/.vs
+/TextEncrypterWindows/x64

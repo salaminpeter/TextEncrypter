@@ -16,7 +16,7 @@ bool CTextEncrypter::LoadImg(const char* path)
 		return false;
 
 	m_ImagePath = path;
-	size_t DataSize = m_ImageWidth * m_ImageHeight * max(3, channels);
+	size_t DataSize = m_ImageWidth * m_ImageHeight * 3;
 	m_ByteData.clear();
 	stbi_uc* data = stbi_load(path, &m_ImageWidth, &m_ImageHeight, &channels, 3);
 	m_ByteData.assign(data, data + DataSize);

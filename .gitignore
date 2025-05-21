@@ -32,3 +32,9 @@
 *.app
 /TextEncrypterWindows/.vs
 /TextEncrypterWindows/x64
+/TextEncrypterVS/TextEncrypterCLR/.vs
+/TextEncrypterVS/TextEncrypterCLR/TextEncrypterCLR/x64
+/TextEncrypterVS/TextEncrypterCLR/x64
+/TextEncrypterVS/TextEncrypterWinApp/.vs
+/TextEncrypterVS/TextEncrypterWinApp/bin
+/TextEncrypterVS/TextEncrypterWinApp/obj

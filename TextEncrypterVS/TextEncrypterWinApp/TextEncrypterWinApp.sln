@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextEncrypterWinApp", "TextEncrypterWinApp.csproj", "{93ED502D-25FC-4C09-8D8E-7AE4A918EB3B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93ED502D-25FC-4C09-8D8E-7AE4A918EB3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93ED502D-25FC-4C09-8D8E-7AE4A918EB3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93ED502D-25FC-4C09-8D8E-7AE4A918EB3B}.Debug|x64.ActiveCfg = Debug|x64
+		{93ED502D-25FC-4C09-8D8E-7AE4A918EB3B}.Debug|x64.Build.0 = Debug|x64
+		{93ED502D-25FC-4C09-8D8E-7AE4A918EB3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93ED502D-25FC-4C09-8D8E-7AE4A918EB3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93ED502D-25FC-4C09-8D8E-7AE4A918EB3B}.Release|x64.ActiveCfg = Release|x64
+		{93ED502D-25FC-4C09-8D8E-7AE4A918EB3B}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B6A68833-EAF1-451D-B675-9DA172A55E75}
+	EndGlobalSection
+EndGlobal

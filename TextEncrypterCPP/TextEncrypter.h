@@ -10,8 +10,8 @@ class CTextEncrypter
 public:
 	bool LoadImg(const char* path);
 
-	void AddTextToImage(const char* text);
-	std::string ReadTextFromImage();
+	void AddTextToImage(std::u16string text);
+	std::u16string ReadTextFromImage();
 
 	void ResetCursor() { m_CurrentByte = 0; }
 

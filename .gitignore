@@ -38,3 +38,7 @@
 /TextEncrypterVS/TextEncrypterWinApp/.vs
 /TextEncrypterVS/TextEncrypterWinApp/bin
 /TextEncrypterVS/TextEncrypterWinApp/obj
+/TextDecrypterAS/.idea
+*.jpg
+*.bmp
+*.png

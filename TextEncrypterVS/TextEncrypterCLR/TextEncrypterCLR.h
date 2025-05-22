@@ -33,15 +33,16 @@ namespace TextEncrypterCLR {
 
 		void AddTextToImage(String^ text)
 		{
-			msclr::interop::marshal_context ctx;
-			const char* NativeText = ctx.marshal_as<const char*>(text);
+			pin_ptr<const wchar_t> pinned = PtrToStringChars(text);
+			const char16_t* u16ptr = reinterpret_cast<const char16_t*>(pinned);
+			std::u16string NativeText(u16ptr, text->Length);
 			m_TextEncrypter->AddTextToImage(NativeText);
 		}
 
 		String^ ReadTextFromImage()
 		{
-			std::string NativeText = m_TextEncrypter->ReadTextFromImage();
-			return gcnew String(NativeText.c_str());
+			std::u16string NativeText = m_TextEncrypter->ReadTextFromImage();
+			return gcnew String(reinterpret_cast<const wchar_t*>(NativeText.c_str()));
 		}
 
 	private:

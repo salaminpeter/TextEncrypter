@@ -1,0 +1,3 @@
+[submodule "d:\\ProgrammingProjects\\text_encrypter\\TextEncrypter\\TextEncrypterCPP\\ImageLib"]
+	path = d:\\ProgrammingProjects\\text_encrypter\\TextEncrypter\\TextEncrypterCPP\\ImageLib
+	url = https://github.com/nothings/stb.git

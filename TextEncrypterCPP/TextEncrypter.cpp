@@ -26,6 +26,13 @@ bool CTextEncrypter::LoadImg(const char* path)
 	return true;
 }
 
+void CTextEncrypter::SetByteData(std::uint8_t* data, size_t size)
+{
+	m_ByteData.clear();
+	m_ByteData.assign(data, data + size);
+}
+
+
 void CTextEncrypter::AddTextToImage(std::u16string text)
 {
 	m_CurrentByte = 0;

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <msclr/marshal_cppstd.h>
 #include "TextEncrypter.h"
 
 using namespace System;

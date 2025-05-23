@@ -3,7 +3,6 @@
 #include <cstdint>
 #include <vector>
 #include <string>
-#include <msclr/marshal_cppstd.h>
 
 class CTextEncrypter
 {

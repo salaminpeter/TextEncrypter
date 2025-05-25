@@ -5,6 +5,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
+import android.speech.tts.TextToSpeech;
+import android.speech.tts.UtteranceProgressListener;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +15,7 @@ import android.widget.ImageView;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,14 +24,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private static final int REQUEST_CODE_PICK_IMAGE = 1;
+
     private EditText m_TextEditor;
+    private TTSHandler m_TTSHandler;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        m_TTSHandler = new TTSHandler(this);
+        m_TTSHandler.checkIfInstalled();
+
         m_TextEditor = findViewById(R.id.editTextTextMultiLine);
+
 
         Button PickImageBtn = findViewById(R.id.button);
         PickImageBtn.setOnClickListener(new View.OnClickListener() {
@@ -37,8 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 openImagePicker();
             }
         });
-
-    }
+   }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -78,6 +87,9 @@ public class MainActivity extends AppCompatActivity {
 
             ImageView imageView = findViewById(R.id.imageView);
             imageView.setImageURI(imageUri);
+        }
+        else if (requestCode == TTSHandler.REQUEST_CODE_CHECK_TTS) {
+            m_TTSHandler.HandleTTSCheck(resultCode);
         }
     }
 

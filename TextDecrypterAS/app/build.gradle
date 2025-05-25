@@ -3,13 +3,21 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        release {
+        storeFile file('D:\\ProgrammingProjects\\text_encrypter\\TextEncrypter\\TextDecrypterAS\\keystore\\imageviewer-key.jks')
+            storePassword 'Loncstenger'
+            keyAlias 'imagevieweralias'
+            keyPassword 'Loncstenger'
+        }
+    }
     compileSdkVersion 30
     buildToolsVersion "36.0.0"
 
     defaultConfig {
         applicationId "com.momosoft.imageviewer"
         minSdkVersion 21
-        targetSdkVersion 31
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 

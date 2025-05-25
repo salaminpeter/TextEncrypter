@@ -12,8 +12,7 @@ public:
 
 	void AddTextToImage(std::u16string text);
 	std::u16string ReadTextFromImage();
-
-	void ResetCursor() { m_CurrentByte = 0; }
+	bool HasMessage();
 
 	template <typename T>
 	bool WriteToByteData(T data)
@@ -58,8 +57,12 @@ public:
 		return res;
 	}
 
+private:
+	void EncodeTextInByteData(std::u16string text);
+	void AddMessageTag();
 
 private:
+	const std::u16string m_Tag = u"[msg]";
 	std::vector<std::uint8_t> m_ByteData;
 	int m_ImageWidth;
 	int m_ImageHeight;

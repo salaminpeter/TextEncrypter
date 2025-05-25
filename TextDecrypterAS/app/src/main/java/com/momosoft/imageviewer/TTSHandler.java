@@ -30,22 +30,18 @@ public class TTSHandler {
 
     public void HandleTTSCheck(int resultCode) {
         if (resultCode == TextToSpeech.Engine.CHECK_VOICE_DATA_PASS) {
-
+            m_Activity.findViewById(R.id.button).setEnabled(false);
             m_TTS = new TextToSpeech(m_Activity, new TextToSpeech.OnInitListener() {
                 @Override
                 public void onInit(int status) {
                     if (status == TextToSpeech.SUCCESS) {
                         int result = m_TTS.setLanguage(new Locale("hu", "HU"));
 
-
-                        setText("Magyar idő szerint háromnegyed kilenckor átlépte a magyar-román határt Magyar Péter, illetve kísérői. Élő közvetítésében elmondta, vele tart többi között Rost Andrea is, illetve később csatlakozik majd hozzá Nagy Ervin. Terveik szerint délután két órakor érkeznek meg Nagyvárad városába, ahol majd a várban fejezik be a tíz napja tartó sétát.");
-                        m_MsgChunkIndex = 0;
-                        playMessageChunk(0);
-
-
-
                         if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
                             //handle
+                        }
+                        else {
+                            m_Activity.findViewById(R.id.button).setEnabled(true);
                         }
                     } else {
                         //handle
@@ -63,7 +59,11 @@ public class TTSHandler {
                 public void onDone(String utteranceId) {
                     if (m_MsgChunkIndex == m_MessageChunks.length - 1) {
                         m_TTS.stop();
-                        m_TTS.shutdown();
+                        m_Activity.runOnUiThread(() -> {
+                            m_Activity.findViewById(R.id.button).setEnabled(true);
+                            m_Activity.findViewById(R.id.button2).setEnabled(true);
+                        });
+
                     }
                     else {
                         playMessageChunk(++m_MsgChunkIndex);

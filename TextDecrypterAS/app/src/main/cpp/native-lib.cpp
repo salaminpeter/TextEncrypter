@@ -23,7 +23,7 @@ Java_com_momosoft_imageviewer_MainActivity_getMessage(JNIEnv *env, jobject thiz)
     std::u16string text = Textencrypter.ReadTextFromImage();;
 
     if (text.empty() || text.data() == nullptr) {
-        return env->NewStringUTF("Invalid message");
+        return env->NewStringUTF("");
     }
 
      return env->NewString(reinterpret_cast<const jchar*>(text.data()), static_cast<jsize>(text.length()));

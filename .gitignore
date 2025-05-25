@@ -44,3 +44,5 @@
 *.png
 TextDecrypterAS/gradlew
 TextDecrypterAS/gradlew.bat
+/TextDecrypterAS/app/release
+TextDecrypterAS/app/release/app-release.apk

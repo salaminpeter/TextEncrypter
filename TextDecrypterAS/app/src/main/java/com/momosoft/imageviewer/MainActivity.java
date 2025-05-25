@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int REQUEST_CODE_PICK_IMAGE = 1;
 
-    private EditText m_TextEditor;
     private TTSHandler m_TTSHandler;
 
 
@@ -34,11 +33,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        findViewById(R.id.button).setEnabled(false);
+        findViewById(R.id.button2).setEnabled(false);
+
         m_TTSHandler = new TTSHandler(this);
         m_TTSHandler.checkIfInstalled();
-
-        m_TextEditor = findViewById(R.id.editTextTextMultiLine);
-
 
         Button PickImageBtn = findViewById(R.id.button);
         PickImageBtn.setOnClickListener(new View.OnClickListener() {
@@ -47,7 +46,18 @@ public class MainActivity extends AppCompatActivity {
                 openImagePicker();
             }
         });
-   }
+
+        Button PlayBtn = findViewById(R.id.button2);
+        PlayBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findViewById(R.id.button).setEnabled(false);
+                findViewById(R.id.button2).setEnabled(false);
+                m_TTSHandler.playMessage();
+            }
+        });
+
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -83,7 +93,11 @@ public class MainActivity extends AppCompatActivity {
 
             setByteData(ByteData, ByteData.length);
             String Message = getMessage();
-            m_TextEditor.setText(Message);
+
+            findViewById(R.id.button2).setEnabled(!Message.isEmpty());
+
+            if (!Message.isEmpty())
+                m_TTSHandler.setText(Message);
 
             ImageView imageView = findViewById(R.id.imageView);
             imageView.setImageURI(imageUri);

@@ -44,3 +44,9 @@
 *.png
 TextDecrypterAS/gradlew
 TextDecrypterAS/gradlew.bat
+/TextDecrypterAS/app/release
+/TextEncrypterVS/TextEncrypterCLR/Release
+/TextEncrypterVS/TextEncrypterCLR/TextEncrypterCLR/Debug
+/TextEncrypterVS/TextEncrypterCLR/TextEncrypterCLR/Release
+/TextEncrypterVS/TextEncrypterCLR/TextEncrypterCLR/Win32/Release
+/TextEncrypterVS/TextEncrypterCLR/Win32/Release
